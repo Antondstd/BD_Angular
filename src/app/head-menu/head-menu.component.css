@@ -1,0 +1,26 @@
+#head_menu{
+  width: 100%;
+  margin: 0;
+  height:35px;
+  background: #0a1932;
+  text-align: center;
+}
+.menu_option{
+  line-height: 35px;
+  text-align: center;
+  color: #e7f2ff;
+  font-weight: 550;
+  width: 7%;
+  margin: 0;
+  display: inline-block;
+}
+
+a{
+  font-weight: 600;
+  text-decoration: none;
+  color: #1b8dba;
+}
+
+a:hover{
+  color: #0085ff;
+}

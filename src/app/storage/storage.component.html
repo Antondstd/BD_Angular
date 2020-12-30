@@ -1,0 +1,29 @@
+<app-head-menu>Menu....</app-head-menu>
+<div class="allInGroup">
+  <div class="group">
+    <div class="topic">Список хранилищ в кабинете {{room.name}} // Всего хранилищ: {{room.numOfStorages}}</div>
+    <div class="the_line"></div>
+
+    <table>
+      <tr class="header">
+        <th>ID</th>
+        <th>Книги</th>
+        <th style="border-right-style: none">Пробирки(зелье)</th>
+      </tr>
+      <tr class="inf_row"
+          *ngFor="let storage of storages.slice();
+          let i = index"
+          [attr.data-index]="i">
+        <td>{{storage.id}}</td>
+        <td><div *ngFor="let book of storage.books.slice()">{{book}}</div></td>
+        <td><div *ngFor="let potion of storage.potions.slice()">
+          {{potion.name}} - {{potion.potion}}
+        </div></td>
+      </tr>
+      <br>
+    </table>
+
+  </div>
+
+
+</div>

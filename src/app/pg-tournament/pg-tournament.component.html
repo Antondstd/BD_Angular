@@ -1,0 +1,65 @@
+<app-head-menu>Menu....</app-head-menu>
+
+<div class="allInGroup">
+
+  <div class="group">
+
+    <div class="topic">Список Участников</div>
+    <div class="the_line"></div>
+
+    <table>
+      <tr class="header">
+        <th>№ п/п</th>
+        <th *ngIf="personStatus == 'true' && tournament.winnerId == null">Действие</th>
+        <th>ID</th>
+        <th>Аватар</th>
+        <th>Имя</th>
+        <th style="border-right-style: none">Возраст</th>
+      </tr>
+      <tr class="inf_row"
+          *ngFor="let person of groupOfPeople.slice().reverse();
+          let i = index"
+          [attr.data-index]="i">
+        <td>{{i+1}}</td>
+        <td *ngIf="personStatus  == 'true' && tournament.winnerId == null">
+<!--          <button *ngIf="personStatus && tournament.winnderId == null">Победитель</button><br>-->
+<!--          <button *ngIf="personStatus && tournament.winnderId == null">Исключить</button>-->
+          <button (click)="setWinner(person.id)">Победитель</button><br>
+          <button (click)="excludePerson(person.id)">Исключить</button>
+        </td>
+        <td>{{person.id}}</td>
+        <td>
+          <!--        <img [src]="assets/custom_icons/profile.png"-->
+          <!--               onError="this.src='assets/profile_icon.png'">-->
+          <img height="25" src="assets/custom_icons/profile{{person.id}}.png"
+               (error)="onImgError($event)" /></td>
+        <td><a href="./profile/{{person.id}}">{{person.name}}</a></td>
+        <td>{{person.age}}</td>
+      </tr>
+      <br>
+    </table>
+
+  </div>
+
+  <div class="group" style="margin-left: 50px;width: 300px">
+    <div class="topic">Информация о турнире</div>
+    <div class="the_line"></div>
+    <div id="profile">
+      <div class="prof_text">ID: {{tournament.id}}</div>
+      <div class="prof_text">Название: {{tournament.name}}</div>
+      <div class="prof_text">Предмет: {{tournament.subject}}</div>
+      <div class="prof_text">Кол-во Участников: {{tournament.numOfParticip}}</div>
+      <div class="prof_text">Организатор: <a href="./profile/{{tournament.organizerId}}">{{tournament.organizer}}</a></div>
+      <div class="prof_text">Победитель: <a href="./profile/{{tournament.winnerId}}">{{tournament.winner}}</a></div>
+      <div class="prof_text" style="padding-bottom: 5px">Статус: {{getStatus(tournament.winnerId)}}</div>
+
+      <div style="padding-bottom: 20px; padding-left: 50px;" *ngIf="personStatus == 'false' && tournament.winnerId == null">
+        <button *ngIf="checkInGroup()" (click)="exitTourn()">Выйти</button>
+        <button *ngIf="!checkInGroup()" (click)="enterTourn()">Учавствовать</button>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>

@@ -1,0 +1,120 @@
+#ch_menu{
+  /*padding-top: 10px;*/
+  /*padding-bottom: 10px;*/
+  width: 350px;
+  background: #f1f1f1;
+  font-size: 20px;
+  text-align: center;
+  margin: auto;
+}
+
+.choose{
+  color: #a6a6b1;
+  background: #f1f1f1;
+  width: 50%;
+  height: 45px;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 45px;
+  text-align: center;
+  display:inline-block;
+  text-shadow: 1px 1px 1px #FFF;
+}
+
+.choose_not_reg{
+  color: #BABECC;
+  background: #f1f1f1;
+  width: 50%;
+  box-shadow: inset -5px -5px 8px -3px #a5a5a5;
+  height: 45px;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 45px;
+  text-align: center;
+  display:inline-block;
+  text-shadow: 1px 1px 1px #FFF;
+}
+
+.choose_not_log{
+  color: #BABECC;
+  background: #f1f1f1;
+  width: 50%;
+  box-shadow: inset 5px -5px 8px -3px #c3c3c3;
+  height: 45px;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 45px;
+  text-align: center;
+  display:inline-block;
+  text-shadow: 1px 1px 1px #FFF;
+}
+
+button {
+  margin-top: 20px;
+  color: #2e87e2;
+  font-weight: bold;
+  box-shadow: -5px -5px 20px #FFFFFF, 5px 5px 20px #BABECC;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  font-weight: 600;
+  box-sizing: border-box;
+  appearance: none;
+  -webkit-appearance: none;
+  border: 0;
+  padding: 16px;
+  border-radius: 320px;
+}
+
+button:hover{
+  box-shadow: -2px -2px 5px #FFFFFF, 2px 2px 5px #BABECC;
+}
+
+button:active {
+  box-shadow: inset 1px 1px 2px #FFFFFF, inset -1px -1px 2px #BABECC;
+}
+
+.errorLogin{
+  color: #8a0e0e;
+  font-size: 12px;
+  margin: 5px 0px 5px 0px;
+}
+
+
+.cantLogin {
+  color: #8a0e0e;
+  transition: 1s;
+  visibility: hidden;
+  margin-top: 5px;
+}
+
+input {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  color: #747474;
+  box-shadow: inset 2px 2px 5px #BABECC, inset -5px -5px 10px #FFFFFF;
+  width: 75%;
+  border: 0;
+  box-sizing: border-box;
+  transition: all 0.4s ease-in-out;
+  appearance: none;
+  -webkit-appearance: none;
+  padding: 16px;
+  border-radius: 320px;
+  margin: 5px 0px 5px 0px;
+}
+input:focus{
+  box-shadow:  inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFFFFF;
+}
+
+.home_header{
+  width: 350px;
+  background: #f1f1f1;
+  font-size: 20px;
+  text-align: center;
+  margin: auto;
+  padding-top: 25px;
+  border-radius: 0px 0px 20px 20px;
+}
+/*#bottom{*/
+/*  border-bottom: solid black 5px;*/
+/*}*/

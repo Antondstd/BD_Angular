@@ -1,0 +1,27 @@
+<app-head-menu>Menu....</app-head-menu>
+<div class="allInGroup">
+  <div class="group">
+    <div class="topic">Список кабинетов</div>
+    <div class="the_line"></div>
+
+    <table>
+      <tr class="header">
+        <th>ID</th>
+        <th>Название кабинета</th>
+        <th>Количество хранилищ</th>
+      </tr>
+      <tr class="inf_row"
+          *ngFor="let room of rooms.slice().reverse();
+          let i = index"
+          [attr.data-index]="i">
+        <td>{{room.id}}</td>
+        <td><a href="./room/{{room.id}}">{{room.name}}</a></td>
+        <td>{{room.numOfStorages}}</td>
+      </tr>
+      <br>
+    </table>
+
+  </div>
+
+
+</div>

@@ -1,0 +1,93 @@
+<app-head-menu>Menu....</app-head-menu>
+<div id="all_profile">
+  <div id="profile">
+    <img id="profile_image" src="assets/profile_icon.png"/>
+    <div class="the_line"></div>
+    <div class="prof_text">Имя: {{person.name}}</div>
+    <div class="prof_text">Возраст: {{person.age}}</div>
+    <div class="prof_text">Группа: {{person.group == null ? "Нет" : person.group}}</div>
+    <div class="prof_text" style="padding-bottom: 5px">Статус: {{personStatus == 'false' ? "Ученик" : "Преподаватель"}}</div>
+  </div>
+
+  <div id="information_block">
+
+    <div class="option_inform" [ngClass]="activeBlock == 1 ? 'option_inform' : 'option_inform_not_picked'"
+         [style.z-index]="activeBlock != 1 ? '9' : '10'"
+         style="margin: 0"
+         (click)="changeActive(1)">Изученные заклинания</div>
+
+    <div class="option_inform" [ngClass]="activeBlock == 2 ? 'option_inform' : 'option_inform_not_picked'"
+         [style.z-index]="activeBlock != 2 ? '8' : '10'"
+         (click)="changeActive(2)">Написанные книги</div>
+
+    <div class="option_inform" [ngClass]="activeBlock == 3 ? 'option_inform' : 'option_inform_not_picked'"
+         [style.z-index]="activeBlock != 3 ? '7' : '10'"
+         (click)="changeActive(3)">Участие в турнирах</div>
+    <div class="the_line"></div>
+
+
+    <div class="bottom_inf" *ngIf="activeBlock == 1">
+      <table>
+        <tr class="header">
+          <th>Название</th>
+          <th>Книга</th>
+          <th>Зелья</th>
+          <th style="border-right-style: none">Сложность</th>
+        </tr>
+        <tr class="inf_row" *ngFor="let spell of spells.slice().reverse()">
+          <td>{{spell.name}}</td>
+          <td>{{spell.book}}</td>
+          <td><div *ngFor="let potion of spell.potions.slice()">{{potion}}</div></td>
+          <td>{{spell.difficulty}}</td>
+        </tr>
+        <br>
+      </table>
+    </div>
+
+    <div class="bottom_inf" *ngIf="activeBlock == 2">
+      <table>
+        <tr class="header">
+          <th>Название</th>
+          <th>Авторы</th>
+          <th>Количество страниц</th>
+          <th>Предмет</th>
+          <th style="border-right-style: none">Состояние</th>
+        </tr>
+        <tr class="inf_row" *ngFor="let book of books.slice().reverse()">
+          <td>{{book.name}}</td>
+          <td><div *ngFor="let person of book.authors.slice()">{{person}}</div></td>
+          <td>{{book.pageCount}}</td>
+          <td>{{book.lesson}}</td>
+          <td>{{book.condition}}</td>
+        </tr>
+        <br>
+      </table>
+    </div>
+
+    <div class="bottom_inf" *ngIf="activeBlock == 3">
+      <table>
+        <tr class="header">
+          <th>ID</th>
+          <th>Название</th>
+          <th>Предмет</th>
+          <th>Кол-во участников</th>
+          <th>Организатор</th>
+          <th>Статус</th>
+          <th style="border-right-style: none">Тип участия</th>
+        </tr>
+        <tr class="inf_row" *ngFor="let tournament of tournaments.slice().reverse()">
+          <td>{{tournament.id}}</td>
+          <td><a href="./tournament/{{tournament.id}}">{{tournament.name}}</a></td>
+          <td>{{tournament.subject}}</td>
+          <td>{{tournament.numOfParticip}}</td>
+          <td><a href="./profile/{{tournament.organizerId}}">{{tournament.organizer}}</a></td>
+          <td>{{getStatus(tournament.winnerId)}}</td>
+          <td>{{getWinner(person.id,tournament)}}</td>
+        </tr>
+        <br>
+      </table>
+    </div>
+
+
+  </div>
+</div>

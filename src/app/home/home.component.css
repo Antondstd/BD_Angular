@@ -1,0 +1,96 @@
+.home_header {
+  width: 350px;
+  background: #0a1932;
+  font-size: 20px;
+  text-align: center;
+
+  border-radius: 20px 20px 0px 0px;
+  border-bottom: 0;
+
+}
+
+#shadow_main{
+  width: 350px;
+  margin: auto;
+  margin-top: 15%;
+  border-radius: 20px;
+  box-shadow: 5px 5px 20px #2b6173;
+}
+
+#the_line{
+  width: 100%;
+  height: 5px;
+  margin-top: -3px;
+  background: #5dcbff;
+  align-content: center;
+}
+
+#right {
+  float: right;
+  padding-right: 15%;
+  color: #e8efff;
+  line-height: 50px;
+  text-align: center;
+}
+#left{
+  margin: 0px;
+  padding: 0px;
+  height:50px;
+
+  /*float: left;*/
+  /*padding-left: 25%;*/
+}
+/*@media screen and (max-width: 804px){*/
+/*  .home_header{*/
+/*    font-size: 12px;*/
+/*  }*/
+/*  #right {*/
+/*    padding-right: 10%;*/
+/*  }*/
+/*  #left{*/
+/*    padding-left: 10%;*/
+/*  }*/
+/*}*/
+
+/*@media screen and (max-width: 1095px) and (min-width: 804px){*/
+/*  .home_header{*/
+/*    font-size: 16px;*/
+/*  }*/
+/*  #right {*/
+/*    padding-right: 15%;*/
+/*  }*/
+/*  #left{*/
+/*    padding-left: 15%;*/
+/*  }*/
+/*}*/
+
+.PointTable{
+  align-content: center;
+  width: 100%;
+}
+#head{
+  margin-top:5%;
+  border-top: solid black 5px;
+}
+.message{
+  color: red;
+  font-size: 15px;
+}
+#point_form {
+}
+#clock{
+  width: 100%;
+  background: #0a0a0a;
+  font-size: 20px;
+  text-align: center;
+  padding: 20px 0px 20px 0px;
+  color: white;
+}
+#graph {
+  width: 100%;
+  background: #0a0a0a;
+  font-size: 20px;
+  text-align: center;
+  padding: 20px 0px 20px 0px;
+  color: white;
+}

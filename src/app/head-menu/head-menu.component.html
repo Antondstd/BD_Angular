@@ -1,0 +1,8 @@
+<div id="head_menu">
+  <a class="menu_option" href="./profile/{{idProfile}}">Профиль</a>
+  <a class="menu_option" href="./group/{{idGroup}}">Группа</a>
+  <a class="menu_option" href="./rooms">Кабинеты</a>
+  <a *ngIf="idGroup != 'null'" class="menu_option" href="./tournaments">Турниры</a>
+  <a class="menu_option" (click)="logOut()">Выйти</a>
+</div>
+

@@ -1,0 +1,58 @@
+<app-head-menu>Menu....</app-head-menu>
+<div class="allInGroup">
+  <div class="group">
+    <div class="topic">Группа №{{groupId}} - {{groupName}}</div>
+    <div class="the_line"></div>
+    <table>
+      <tr class="header">
+        <th>№ п/п</th>
+        <th>ID</th>
+        <th>Аватар</th>
+        <th>Имя</th>
+        <th style="border-right-style: none">Возраст</th>
+      </tr>
+      <tr [ngClass] = "person.id == groupLeader ? 'inf_row_headman' : 'inf_row'"
+          *ngFor="let person of groupOfPeople.slice().reverse();
+          let i = index"
+          [attr.data-index]="i">
+        <td>{{i+1}}</td>
+        <td>{{person.id}}</td>
+        <td>
+  <!--        <img [src]="assets/custom_icons/profile.png"-->
+  <!--               onError="this.src='assets/profile_icon.png'">-->
+          <img height="25" src="assets/custom_icons/profile{{person.id}}.png"
+               (error)="onImgError($event)" /></td>
+        <td><a href="./profile/{{person.id}}">{{person.name}}</a></td>
+        <td>{{person.age}}</td>
+      </tr>
+      <br>
+    </table>
+  </div>
+
+  <div class="group" style="margin-left: 50px">
+    <div class="topic">Изучаемые дисциплины</div>
+    <div class="the_line"></div>
+    <table>
+      <tr class="header">
+        <th>Название</th>
+        <th>Книги</th>
+        <th style="border-right-style: none">Преподаватели</th>
+      </tr>
+      <tr class="inf_row" *ngFor="let lesson of lessons.slice().reverse();">
+
+        <td>{{lesson.name}}</td>
+
+        <td><div *ngFor="let book of lesson.books.slice();">
+          {{book}}
+        </div></td>
+
+        <td><div *ngFor="let teacher of lesson.teachers.slice();">
+<!--          <a href="./profile/{{teacher.id}}">{{teacher}}</a>-->
+          {{teacher}}
+        </div></td>
+
+      </tr>
+      <br>
+    </table>
+  </div>
+</div>

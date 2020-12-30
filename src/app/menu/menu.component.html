@@ -1,0 +1,45 @@
+
+<div id="ch_menu">
+<!--  <div-->
+<!--    [ngClass] = "activeBlock ? 'choose' : 'choose_not_reg'"#registrationMenu-->
+<!--       (click)="changeActive('registration')">Регистрация</div>-->
+  <div  #logInMenu
+       [ngClass] = "!activeBlock ? 'choose' : 'choose_not_log'"
+       (click)="changeActive('logIn')">Вход</div>
+</div>
+<div class="home_header" id="bottom">
+<!--  <div *ngIf="activeBlock">-->
+<!--    <form>-->
+<!--    <input [(ngModel)]="login" autocomplete="off" required name="loginInp" pattern="[0-9a-zа-я_]*" placeholder="Логин" #loginInp="ngModel">-->
+<!--    <br>-->
+
+<!--    <div class="errorLogin" *ngIf="loginInp.errors?.pattern">Допустимо использовать лишь символы 0-9, a-z, а-я и _</div>-->
+<!--    <div class="errorLogin" [style.visibility]="loginInp.errors?.required ? 'visible' : 'hidden'">Укажите логин</div>-->
+
+<!--    <input [(ngModel)]="password" type="password" name="password" required placeholder="Пароль" #passwordInp="ngModel">-->
+<!--    <br>-->
+<!--      <div class="errorLogin" [style.visibility]="passwordInp.errors?.required ? 'visible' : 'hidden'">Укажите пароль</div>-->
+<!--    <button (click)="registration()" [disabled]="!loginInp.valid || !passwordInp.valid">Зарегистрироваться</button>-->
+<!--    </form>-->
+<!--    <br>-->
+<!--    <div *ngIf="cantRegistrate" class="cantLogin">{{cantRegMessage}}</div>-->
+<!--  </div>-->
+
+
+  <div *ngIf="!activeBlock">
+    <form>
+      <input [(ngModel)]="login" autocomplete="off" required name="loginInp" pattern="[0-9a-zA-Zа-я_]*" placeholder="Логин" #loginInp="ngModel">
+    <br>
+    <div class="errorLogin" *ngIf="loginInp.errors?.pattern">Допустимо использовать лишь символы 0-9, a-z, A-Z, а-я и _</div>
+    <div class="errorLogin" [style.visibility]="loginInp.errors?.required ? 'visible' : 'hidden'">Укажите логин</div>
+    <input [(ngModel)]="password" type="password" name="password" required placeholder="Пароль" #passwordInp="ngModel">
+    <br>
+      <div class="errorLogin" [style.visibility]="passwordInp.errors?.required ? 'visible' : 'hidden'">Укажите пароль</div>
+<!--      <div class="errorLogin" *ngIf="passwordInp.errors?.required">Укажите пароль</div>-->
+    <button type="submit" (click)="tryLogin()" [disabled]="!loginInp.valid || !passwordInp.valid" style="padding: 15px 50px 15px 50px">Войти</button>
+    </form>
+    <br>
+    <div *ngIf="cantLogin" class="cantLogin" >Не удалось войти</div>
+  </div>
+</div>
+

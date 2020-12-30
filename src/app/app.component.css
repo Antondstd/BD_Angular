@@ -1,0 +1,70 @@
+.home_header {
+  width: 100%;
+  background: #ffffff;
+  font-size: 20px;
+  text-align: center;
+  padding: 20px 0px 10px 0px;
+}
+#right {
+  float: right;
+  padding-right: 25%;
+}
+#left{
+  color: #ffffff;
+  float: left;
+  padding-left: 25%;
+}
+@media screen and (max-width: 804px){
+  .home_header{
+    font-size: 12px;
+  }
+  #right {
+    padding-right: 10%;
+  }
+  #left{
+    padding-left: 10%;
+  }
+}
+
+@media screen and (max-width: 1095px) and (min-width: 804px){
+  .home_header{
+    font-size: 16px;
+  }
+  #right {
+    padding-right: 15%;
+  }
+  #left{
+    padding-left: 15%;
+  }
+}
+
+.PointTable{
+  align-content: center;
+  width: 100%;
+}
+#head{
+  margin-top:5%;
+  border-top: solid black 5px;
+}
+.message{
+  color: red;
+  font-size: 15px;
+}
+#point_form {
+}
+#clock{
+  width: 100%;
+  background: #0a0a0a;
+  font-size: 20px;
+  text-align: center;
+  padding: 20px 0px 20px 0px;
+  color: white;
+}
+#graph {
+  width: 100%;
+  background: #0a0a0a;
+  font-size: 20px;
+  text-align: center;
+  padding: 20px 0px 20px 0px;
+  color: white;
+}
